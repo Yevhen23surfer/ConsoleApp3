@@ -12,3 +12,4 @@
 /Users/yevgenskopets/Documents/IT/Course/kodehode/Modul B/csharpProjects/ConsoleApp3/obj/Debug/net8.0/ConsoleApp3.pdb
 /Users/yevgenskopets/Documents/IT/Course/kodehode/Modul B/csharpProjects/ConsoleApp3/obj/Debug/net8.0/ConsoleApp3.genruntimeconfig.cache
 /Users/yevgenskopets/Documents/IT/Course/kodehode/Modul B/csharpProjects/ConsoleApp3/obj/Debug/net8.0/ref/ConsoleApp3.dll
+/Users/yevgenskopets/Documents/IT/Course/kodehode/Modul B/csharpProjects/ConsoleApp3/obj/Debug/net8.0/ConsoleApp3.sourcelink.json
