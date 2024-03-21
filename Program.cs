@@ -1,20 +1,25 @@
-﻿int[] numbers = { 4, 8, 15, 16, 23, 42 };
-bool found = false; // Initialize found outside the loop
-int total = 0; 
+﻿int employeeLevel = 200;
+string employeeName = "John Smith";
 
-foreach (int number in numbers)
+string title = "";
+
+switch (employeeLevel)
 {
-    total += number;
-    if (number == 42)
-    {
-        found = true;
-        break; // No need to continue looping once 42 is found
-    }
+    case 100:
+        title = "Junior Associate";
+        break;
+    case 200:
+        title = "Senior Associate";
+        break;
+    case 300:
+        title = "Manager";
+        break;
+    case 400:
+        title = "Senior Manager";
+        break;
+    default:
+        title = "Associate";
+        break;
 }
 
-if (found)
-{
-    Console.WriteLine("Set contains 42");
-}
-
-Console.WriteLine($"Total: {total}"); // This total will only reflect the last iteration's value
+Console.WriteLine($"{employeeName}, {title}");
