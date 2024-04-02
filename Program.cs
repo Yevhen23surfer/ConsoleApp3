@@ -1,64 +1,71 @@
 ﻿/*
 // Code project 1 - write code that validates integer input
 
-using System;
+string? readResult;
+string valueEntered = "";
+int numValue = 0;
+bool validNumber = false;
 
-class ValidateIntegerInput
+Console.WriteLine("Enter an integer value between 5 and 10");
+
+do
 {
-    static void Main(string[] args)
+    readResult = Console.ReadLine();
+    if (readResult != null) 
     {
-        int userInput;
-
-        do
-        {
-            Console.WriteLine("Please enter an integer between 5 and 10: ");
-            string inputString = Console.ReadLine();
-
-            // Check if input is a valid integer
-            if (!int.TryParse(inputString, out userInput))
-            {
-                Console.WriteLine("Sorry, you entered an invalid number, please try again.");
-                continue; // Skip to the next iteration if input is not an integer
-            }
-
-            // Check if the integer is within the range
-            if (userInput < 5 || userInput > 10)
-            {
-                Console.WriteLine($"You entered {userInput}. Please enter a number between 5 and 10.");
-            }    
-        } while (userInput < 5 || userInput > 10); // Loop continues until a valid input between 5 and 10 is entered
-
-        Console.WriteLine("Your input, ({0}), has been accepted.", userInput);
+        valueEntered = readResult;
     }
-}
+
+    validNumber = int.TryParse(valueEntered, out numValue);
+
+    if (validNumber == true)
+    {
+        if (numValue <= 5 || numValue >= 10)
+        {
+            validNumber = false;
+            Console.WriteLine($"You entered {numValue}. Please enter a number between 5 and 10.");
+        }
+    }
+    else 
+    {
+        Console.WriteLine("Sorry, you entered an invalid number, please try again");
+    }
+} while (validNumber == false);
+
+Console.WriteLine($"Your input value ({numValue}) has been accepted.");
+
+readResult = Console.ReadLine();
 */
 
 // Code project 2 - write code that validates string input
 
 /*
-using System;
+string? readResult;
+string roleName = "";
+bool validEntry = false;
 
-class ValidateStringInput
-{
-    static void Main(string[] args)
+do
+{                
+    Console.WriteLine("Enter your role name (Administrator, Manager, or User)");
+    readResult = Console.ReadLine();
+    if (readResult != null) 
     {
-        string userRole;
-
-        do
-        {
-            Console.WriteLine("Enter your role name (Administrator, Manager, or User): ");
-            userRole = Console.ReadLine().Trim().ToLower(); // Trim and convert to lowercase
-
-            // Check the role
-            if (userRole != "Administrator" && userRole != "Manager" && userRole != "User")
-            {
-                Console.WriteLine($"The role name that you entered, '{userRole}'. Enter your role name (Administrator, Manager, or User)");
-            }
-        } while (userRole != "administrator" && userRole != "manager" && userRole != "user");
-
-        Console.WriteLine("Your input, ({0}), has been accepted.", userRole);
+        roleName = readResult.Trim();
     }
-}
+
+    if (roleName.ToLower() == "administrator" || roleName.ToLower() == "manager" || roleName.ToLower() == "user") 
+    {
+        validEntry = true;
+    }
+    else
+    {
+        Console.Write($"The role name that you entered, \"{roleName}\" is not valid. ");
+    }
+
+} while (validEntry == false);
+
+Console.WriteLine($"Your input value ({roleName}) has been accepted.");
+readResult = Console.ReadLine();
 */
 
 // Code project 3 - Write code that processes the contents of a string array
