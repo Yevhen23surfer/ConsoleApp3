@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+// Code project 1 - write code that validates integer input
+
+using System;
 
 class ValidateIntegerInput
 {
@@ -26,5 +29,32 @@ class ValidateIntegerInput
         } while (userInput < 5 || userInput > 10); // Loop continues until a valid input between 5 and 10 is entered
 
         Console.WriteLine("Your input, ({0}), has been accepted.", userInput);
+    }
+}
+*/
+
+// Code project 2 - write code that validates string input
+
+using System;
+
+class ValidateStringInput
+{
+    static void Main(string[] args)
+    {
+        string userRole;
+
+        do
+        {
+            Console.WriteLine("Enter your role name (Administrator, Manager, or User): ");
+            userRole = Console.ReadLine().Trim().ToLower(); // Trim and convert to lowercase
+
+            // Check the role
+            if (userRole != "Administrator" && userRole != "Manager" && userRole != "User")
+            {
+                Console.WriteLine($"The role name that you entered, '{userRole}'. Enter your role name (Administrator, Manager, or User)");
+            }
+        } while (userRole != "administrator" && userRole != "manager" && userRole != "user");
+
+        Console.WriteLine("Your input, ({0}), has been accepted.", userRole);
     }
 }
