@@ -13,10 +13,7 @@
             Console.WriteLine($"Hero attacks for {attackValue} damage! Monster was damaged and lost {attackValue} health and now has {monsterHealth} health.");
 
             // Check if monster is still alive
-            if (monsterHealth <= 0)
-            {
-                break;
-            }
+            if (monsterHealth <= 0) continue;
 
             // Monster attacks hero
             attackValue = new Random().Next(1, 11);
