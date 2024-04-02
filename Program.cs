@@ -1,34 +1,30 @@
-﻿class HeroMonsterBattle
+﻿using System;
+
+class ValidateIntegerInput
 {
     static void Main(string[] args)
     {
-        int heroHealth = 10;
-        int monsterHealth = 10;
+        int userInput;
 
         do
         {
-            // Hero attacks monster
-            int attackValue = new Random().Next(1, 11); //Generate random attack value (1-10)
-            monsterHealth -= attackValue;
-            Console.WriteLine($"Hero attacks for {attackValue} damage! Monster was damaged and lost {attackValue} health and now has {monsterHealth} health.");
+            Console.WriteLine("Please enter an integer between 5 and 10: ");
+            string inputString = Console.ReadLine();
 
-            // Check if monster is still alive
-            if (monsterHealth <= 0) continue;
+            // Check if input is a valid integer
+            if (!int.TryParse(inputString, out userInput))
+            {
+                Console.WriteLine("Invalid input. Please enter an integer.");
+                continue; // Skip to the next iteration if input is not an integer
+            }
 
-            // Monster attacks hero
-            attackValue = new Random().Next(1, 11);
-            heroHealth -= attackValue;
-            Console.WriteLine($"Hero was damaged and lost {attackValue} health and now has {heroHealth} health.");
-        } while (heroHealth > 0 && monsterHealth > 0);
+            // Check if the integer is within the range
+            if (userInput < 5 || userInput > 10)
+            {
+                Console.WriteLine("The number must be between 5 and 10.");
+            }    
+        } while (userInput < 5 || userInput > 10); // Loop continues until a valid input between 5 and 10 is entered
 
-        // Determine winner
-        if (monsterHealth <= 0)
-        {
-            Console.WriteLine("Hero wins!");
-        }
-        else
-        {
-            Console.WriteLine("Monster wins!");
-        }
+        Console.WriteLine("Your input, {0}, has been accepted.", userInput);
     }
 }
